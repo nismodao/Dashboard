@@ -8,9 +8,11 @@ class CircleChart extends React.Component {
   constructor(props) {
     super(props);
     this.chart = undefined;
+    this.state = {data: props.data};
   }
 
   componentDidMount() {
+    console.log('from chircle chart', this.state);
     this.chart = $(ReactDOM.findDOMNode(this.refs.chart)).highcharts({
       credits: {
         enabled: false
@@ -23,12 +25,21 @@ class CircleChart extends React.Component {
         }
       },
       chart: {
-        type: 'pie'
+        type: 'pie',
+        fontfamily: "Helvetica",
+        color: "white",
+        backgroundColor: null
       },
       title: {
         verticalAlign: 'middle',
         floating: true,
-        text: this.props.title
+        text: this.props.title,
+        y: 10,
+        style : {
+          fontSize: "25px",
+          color: "white",
+          letterSpacing: "1px"
+        }
       },
       plotOptions: {
         pie: {
@@ -37,20 +48,21 @@ class CircleChart extends React.Component {
       },
       tooltip: {
         formatter: function() {
-          return '<b>'+ this.point.name +'</b>: '+ this.y +' %';
+          return '<b>'+ this.point.name +'</b>: '+ this.y;
         }
       },
       series: [{
         name: 'Calories',
         data: this.props.data,
         size: '100%',
-        innerSize: '85%',
-        showInLegend:true,
+        innerSize: '75%',
+        showInLegend:false,
         dataLabels: {
-          enabled: true
+          enabled: false
         }
       }]
     });
+
   }
   
   componentWillReceiveProps(props) {
@@ -59,7 +71,7 @@ class CircleChart extends React.Component {
   
   render() {
     return (
-      <div ref='chart'>
+      <div ref='chart' className="circle">
       </div>
     )
   }
