@@ -1,7 +1,7 @@
 {
-  "name": "react-es6-demo",
+  "name": "Dashboard-wiht-React",
   "version": "0.1.0",
-  "description": "Showcasing how to use React with ECMAScript 2015",
+  "description": "Dashboard",
   "main": "src/index.js",
   "scripts": {
     "build": "babel-node -- ./node_modules/.bin/webpack",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jlowgren/react-es6-demo.git"
+    "url": ""
   },
-  "author": "Joacim Löwgren",
+  "author": "Nam Dao",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jlowgren/react-es6-demo/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/jlowgren/react-es6-demo",
+  "homepage": "",
   "devDependencies": {
     "babel-cli": "^6.3.17",
     "babel-core": "^6.3.21",
@@ -34,6 +34,8 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "highcharts": "^4.2.6",
+    "jquery": "^3.1.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
   }
