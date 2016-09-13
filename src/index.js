@@ -2,8 +2,6 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import 'skeleton-css/css/skeleton.css';
-// import 'skeleton-css/css/normalize.css';
 import highcharts from 'highcharts';
 import CircleChart from './components/CircleChart';
 import Template from './components/template';
@@ -42,15 +40,11 @@ class App extends React.Component {
           calorieData: [{name: "Calories In", y: 1250}, {name: "Calories Out", y: 1000}],
           dayData: "DAY 3",
           weightData: "160 lb"
-        }
-        ],
+        }],
         index: 0
       }
     this.updateBack = this.updateBack.bind(this);
     this.updateForward = this.updateForward.bind(this);
-  }
-  componentDidmount () {
-
   }
   updateBack () {
     let index = this.state.index;
